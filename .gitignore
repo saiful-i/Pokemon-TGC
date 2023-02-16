@@ -1,0 +1,19 @@
+# Xcode
+*.xcuserstate
+IDEWorkspaceChecks.plist
+xcschemes/xcschememanagement.plist
+Pokemon TGC.xcodeproj/xcuserdata
+Pokemon TGC.xcworkspace/xcuserdata
+Pods/Pods.xcodeproj/xcuserdata
+
+# Local Run Build
+runBuild_files/*
+runBuild_result/*
+runBuild_log/*
+
+# Cocoapods
+Pods
+Pods/*
+
+# Miscellaneous
+\.DS_Store
