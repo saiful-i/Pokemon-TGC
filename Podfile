@@ -5,7 +5,11 @@ target 'Pokemon TGC' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
 
-  # Pods for Pokemon TGC
+  pod 'Alamofire', '~> 5.6'
+  pod 'SwiftyJSON', '~> 5.0'
+  pod 'RxSwift', '~> 6.5'
+  pod 'RxCocoa', '~> 6.5'
+  pod 'AlamofireImage', '~> 4.2'
 
   target 'Pokemon TGCTests' do
     inherit! :search_paths

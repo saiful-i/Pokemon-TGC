@@ -17,3 +17,5 @@ Pods/*
 
 # Miscellaneous
 \.DS_Store
+Pokemon TGC.xcworkspace/contents.xcworkspacedata
+Podfile.lock
