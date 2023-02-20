@@ -7,7 +7,7 @@
 
 import UIKit
 
-class DetailCardViewController: BaseViewController {
+class DetailCardViewController: BaseViewController<DetailCardViewModel> {
     lazy var scrollView = UIScrollView()
     lazy var imageView = UIImageView()
     lazy var nameLabel = UILabel()
@@ -19,7 +19,7 @@ class DetailCardViewController: BaseViewController {
     lazy var collectionViewLayput = UICollectionViewFlowLayout()
     lazy var collectionView = UICollectionView(frame: view.frame, collectionViewLayout: collectionViewLayput)
     
-    let viewModel = DetailCardViewModel()
+//    let viewModel = DetailCardViewModel()
     let imageLoader = ImageLoader.shared
     var id = ""
     var otherCardId = ""
@@ -28,14 +28,15 @@ class DetailCardViewController: BaseViewController {
         super.viewDidLoad()
         
         setupView()
-        viewModel.getDetailCard(id: id)
-        viewModel.getOtherCards(id: otherCardId)
+        bringLoadingViewsToFront()
+        viewModel?.getDetailCard(id: id)
+        viewModel?.getOtherCards(id: otherCardId)
     }
     
     override func registerObserver() {
         super.registerObserver()
         
-        viewModel.card.driver.throttle(.microseconds(500), latest: true).drive(onNext: { [weak self] card in
+        viewModel?.card.driver.throttle(.microseconds(500), latest: true).drive(onNext: { [weak self] card in
             guard let self = self, let card = card else {
                 return
             }
@@ -43,7 +44,7 @@ class DetailCardViewController: BaseViewController {
             self.bindData(card: card)
         }).disposed(by: disposeBag)
         
-        viewModel.otherCards.driver.throttle(.microseconds(500), latest: true).drive(onNext: { [weak self] otherCard in
+        viewModel?.otherCards.driver.throttle(.microseconds(500), latest: true).drive(onNext: { [weak self] otherCard in
             guard let self = self else {
                 return
             }
@@ -203,18 +204,18 @@ extension DetailCardViewController {
 
 extension DetailCardViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return viewModel.otherCards.value().count
+        return viewModel?.otherCards.value().count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CardCollectionViewCell", for: indexPath) as! CardCollectionViewCell
-        cell.imageUrl = viewModel.otherCards.value()[indexPath.row].images?.small
+        cell.imageUrl = viewModel?.otherCards.value()[indexPath.row].images?.small
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        guard let id = viewModel.otherCards.value()[indexPath.row].id,
-              let otherCardId = viewModel.otherCards.value()[indexPath.row].setModel?.id  else {
+        guard let id = viewModel?.otherCards.value()[indexPath.row].id,
+              let otherCardId = viewModel?.otherCards.value()[indexPath.row].setModel?.id  else {
             return
         }
 

@@ -14,6 +14,7 @@ class ViewModel: BaseViewModel {
     var page = 1
     
     func getCards(name: String = "") {
+        isLoading.accept(true)
         self.name = name
         cards.accept([])
         page = 1
@@ -24,6 +25,7 @@ class ViewModel: BaseViewModel {
             }
             self.cards.accept(cards)
             self.page = cards.count
+            self.isLoading.accept(false)
         }
     }
     
@@ -38,6 +40,7 @@ class ViewModel: BaseViewModel {
             tempCards.append(contentsOf: cards)
             self.cards.accept(tempCards)
             self.page = cards.count
+            self.isLoading.accept(false)
         }
     }
 }

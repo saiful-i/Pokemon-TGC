@@ -7,6 +7,10 @@
 
 import RxSwift
 
-class BaseViewModel {
+class BaseViewModel: NSObject {
     var isLoading = BehaviorDriver<Bool>(value: false)
+    
+    required override init() {
+        super.init()
+    }
 }

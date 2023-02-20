@@ -7,26 +7,25 @@
 
 import UIKit
 
-class ViewController: BaseViewController {
+class ViewController: BaseViewController<ViewModel> {
     
     lazy var collectionViewLayput = UICollectionViewFlowLayout()
     lazy var collectionView = UICollectionView(frame: view.frame, collectionViewLayout: collectionViewLayput)
     lazy var textField = UITextField()
     
-    private let viewModel = ViewModel()
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         setupTextField()
         setupCollectionView()
-        viewModel.getCards()
+        bringLoadingViewsToFront()
+        viewModel?.getCards()
     }
     
     override func registerObserver() {
         super.registerObserver()
         
-        viewModel.cards.driver.throttle(.microseconds(500), latest: true).drive(onNext: { [weak self] cards in
+        viewModel?.cards.driver.throttle(.microseconds(500), latest: true).drive(onNext: { [weak self] cards in
             guard let self = self else {
                 return
             }
@@ -84,18 +83,18 @@ extension ViewController {
 
 extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return viewModel.cards.value().count
+        return viewModel?.cards.value().count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CardCollectionViewCell", for: indexPath) as! CardCollectionViewCell
-        cell.imageUrl = viewModel.cards.value()[indexPath.row].images?.small
+        cell.imageUrl = viewModel?.cards.value()[indexPath.row].images?.small
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        guard let id = viewModel.cards.value()[indexPath.row].id,
-              let otherCardId = viewModel.cards.value()[indexPath.row].setModel?.id else {
+        guard let id = viewModel?.cards.value()[indexPath.row].id,
+              let otherCardId = viewModel?.cards.value()[indexPath.row].setModel?.id else {
             return
         }
         
@@ -104,8 +103,8 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         let bottomEdge = scrollView.contentOffset.y + scrollView.frame.size.height
-        if bottomEdge >= scrollView.contentSize.height && !viewModel.isLoading.value() {
-            viewModel.loadMore()
+        if bottomEdge >= scrollView.contentSize.height && !(viewModel?.isLoading.value() ?? true) {
+            viewModel?.loadMore()
         }
     }
 }
@@ -121,7 +120,7 @@ extension ViewController: UICollectionViewDelegateFlowLayout {
 extension ViewController: UITextFieldDelegate {
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         let text = (textField.text ?? "") + string
-        viewModel.getCards(name: text)
+        viewModel?.getCards(name: text)
         return true
     }
 }
