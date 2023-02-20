@@ -18,12 +18,10 @@ class ViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
         setupTextField()
         setupCollectionView()
         viewModel.getCards()
     }
-    
     
     override func registerObserver() {
         super.registerObserver()
@@ -50,7 +48,7 @@ extension ViewController {
         textField.translatesAutoresizingMaskIntoConstraints = false
         let constraints = [
             textField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
-            textField.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 16),
+            textField.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             textField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
             textField.heightAnchor.constraint(equalToConstant: 36)
         ]
@@ -62,7 +60,6 @@ extension ViewController {
         collectionViewLayput.sectionInset = UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8)
         collectionViewLayput.minimumInteritemSpacing = 8
         collectionViewLayput.minimumLineSpacing = 8
-        collectionView.backgroundColor = .white
         collectionView.delegate = self
         collectionView.dataSource = self
         
@@ -76,6 +73,13 @@ extension ViewController {
         ]
         NSLayoutConstraint.activate(constraints)
     }
+    
+    private func openDetailCard(id: String, otherCardId: String) {
+        let controller = DetailCardViewController()
+        controller.id = id
+        controller.otherCardId = otherCardId
+        navigationController?.pushViewController(controller, animated: true)
+    }
 }
 
 extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
@@ -85,8 +89,17 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CardCollectionViewCell", for: indexPath) as! CardCollectionViewCell
-        cell.imageUrl = viewModel.cards.value()[indexPath.row].images.small
+        cell.imageUrl = viewModel.cards.value()[indexPath.row].images?.small
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let id = viewModel.cards.value()[indexPath.row].id,
+              let otherCardId = viewModel.cards.value()[indexPath.row].setModel?.id else {
+            return
+        }
+        
+        openDetailCard(id: id, otherCardId: otherCardId)
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {

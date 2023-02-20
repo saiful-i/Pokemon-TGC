@@ -49,9 +49,19 @@ class BaseApi {
         parameters["page"] = page
         parameters["pageSize"] = pageSize
         
-        sessionManager.request("\(ListUrls.HOST)\(ListUrls.CARDS)", method: .get, parameters: parameters).responseDecodable(of: CardBaseModel.self) { (response) in
+        sessionManager.request("\(ListUrls.HOST)\(ListUrls.CARDS)", method: .get, parameters: parameters).responseDecodable(of: CardsBaseModel.self) { (response) in
             guard let responseValue = response.value else {
                 return completion([])
+            }
+            
+            completion(responseValue.data)
+        }
+    }
+    
+    func getCard(id: String, completion: @escaping (CardModel?) -> Void) {
+        sessionManager.request("\(ListUrls.HOST)\(ListUrls.CARDS)/\(id)", method: .get).responseDecodable(of: CardBaseModel.self) { (response) in
+            guard let responseValue = response.value else {
+                return completion(nil)
             }
             
             completion(responseValue.data)
@@ -67,6 +77,20 @@ class BaseApi {
                 }
             }
         }
+    }
+    
+    func getOtherCards(id: String, completion: @escaping ([CardModel]) -> Void) {
+        var parameters: [String: Any] = [:]
+        parameters["q"] = "set.id:\(id)"
+        parameters["page"] = 1
+        parameters["pageSize"] = 6
         
+        sessionManager.request("\(ListUrls.HOST)\(ListUrls.CARDS)", method: .get, parameters: parameters).responseDecodable(of: CardsBaseModel.self) { (response) in
+            guard let responseValue = response.value else {
+                return completion([])
+            }
+            
+            completion(responseValue.data)
+        }
     }
 }

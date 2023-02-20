@@ -15,14 +15,20 @@
 		4E30E15F299E4DDC00433247 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E30E15E299E4DDC00433247 /* ImageLoader.swift */; };
 		4E30E161299E527900433247 /* ImageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E30E160299E527900433247 /* ImageModel.swift */; };
 		4E30E163299E6F9400433247 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E30E162299E6F9400433247 /* BaseViewModel.swift */; };
+		4E4650F429A0A2AD00191315 /* DetailCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E4650F329A0A2AD00191315 /* DetailCardViewController.swift */; };
+		4E4650F629A0A2DF00191315 /* DetailCardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E4650F529A0A2DF00191315 /* DetailCardViewModel.swift */; };
+		4E4650F829A0A40200191315 /* CardBaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E4650F729A0A40200191315 /* CardBaseModel.swift */; };
+		4E46520E29A0AC8600191315 /* UILabel+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E46520D29A0AC8600191315 /* UILabel+Ext.swift */; };
+		4E46521029A0ADF200191315 /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E46520F29A0ADF200191315 /* Font.swift */; };
 		4E64F410299E20A900ACE764 /* BaseAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E64F40F299E20A900ACE764 /* BaseAPI.swift */; };
 		4E64F412299E233E00ACE764 /* ListUrls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E64F411299E233E00ACE764 /* ListUrls.swift */; };
 		4E64F414299E245800ACE764 /* NetworkResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E64F413299E245800ACE764 /* NetworkResponse.swift */; };
 		4E64F416299E313500ACE764 /* NetworkLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E64F415299E313500ACE764 /* NetworkLogger.swift */; };
 		4E64F418299E31A900ACE764 /* Interceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E64F417299E31A900ACE764 /* Interceptor.swift */; };
-		4E64F41B299E334A00ACE764 /* CardBaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E64F41A299E334A00ACE764 /* CardBaseModel.swift */; };
+		4E64F41B299E334A00ACE764 /* CardsBaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E64F41A299E334A00ACE764 /* CardsBaseModel.swift */; };
 		4E64F41D299E36A000ACE764 /* CardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E64F41C299E36A000ACE764 /* CardModel.swift */; };
 		4E9042C4299E3FFC004FA472 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E9042C3299E3FFC004FA472 /* ViewModel.swift */; };
+		4EDF5B6529A26F9500FA4CEB /* SetModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDF5B6429A26F9500FA4CEB /* SetModel.swift */; };
 		4EE89822299E173D009E8CC7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EE89821299E173D009E8CC7 /* AppDelegate.swift */; };
 		4EE89824299E173D009E8CC7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EE89823299E173D009E8CC7 /* SceneDelegate.swift */; };
 		4EE89826299E173D009E8CC7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EE89825299E173D009E8CC7 /* ViewController.swift */; };
@@ -60,14 +66,20 @@
 		4E30E15E299E4DDC00433247 /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
 		4E30E160299E527900433247 /* ImageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageModel.swift; sourceTree = "<group>"; };
 		4E30E162299E6F9400433247 /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
+		4E4650F329A0A2AD00191315 /* DetailCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCardViewController.swift; sourceTree = "<group>"; };
+		4E4650F529A0A2DF00191315 /* DetailCardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCardViewModel.swift; sourceTree = "<group>"; };
+		4E4650F729A0A40200191315 /* CardBaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardBaseModel.swift; sourceTree = "<group>"; };
+		4E46520D29A0AC8600191315 /* UILabel+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Ext.swift"; sourceTree = "<group>"; };
+		4E46520F29A0ADF200191315 /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
 		4E64F40F299E20A900ACE764 /* BaseAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseAPI.swift; sourceTree = "<group>"; };
 		4E64F411299E233E00ACE764 /* ListUrls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListUrls.swift; sourceTree = "<group>"; };
 		4E64F413299E245800ACE764 /* NetworkResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkResponse.swift; sourceTree = "<group>"; };
 		4E64F415299E313500ACE764 /* NetworkLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkLogger.swift; sourceTree = "<group>"; };
 		4E64F417299E31A900ACE764 /* Interceptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Interceptor.swift; sourceTree = "<group>"; };
-		4E64F41A299E334A00ACE764 /* CardBaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardBaseModel.swift; sourceTree = "<group>"; };
+		4E64F41A299E334A00ACE764 /* CardsBaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsBaseModel.swift; sourceTree = "<group>"; };
 		4E64F41C299E36A000ACE764 /* CardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardModel.swift; sourceTree = "<group>"; };
 		4E9042C3299E3FFC004FA472 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		4EDF5B6429A26F9500FA4CEB /* SetModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetModel.swift; sourceTree = "<group>"; };
 		4EE8981E299E173D009E8CC7 /* Pokemon TGC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pokemon TGC.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4EE89821299E173D009E8CC7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4EE89823299E173D009E8CC7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -124,6 +136,7 @@
 			children = (
 				4E30E15B299E4BCB00433247 /* Extension */,
 				4E30E042299E43E900433247 /* BehaviorDriver.swift */,
+				4E46520F29A0ADF200191315 /* Font.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -139,6 +152,7 @@
 		4E30E15B299E4BCB00433247 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				4E46520D29A0AC8600191315 /* UILabel+Ext.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -159,9 +173,11 @@
 		4E64F419299E333F00ACE764 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				4E64F41A299E334A00ACE764 /* CardBaseModel.swift */,
+				4E64F41A299E334A00ACE764 /* CardsBaseModel.swift */,
 				4E64F41C299E36A000ACE764 /* CardModel.swift */,
 				4E30E160299E527900433247 /* ImageModel.swift */,
+				4E4650F729A0A40200191315 /* CardBaseModel.swift */,
+				4EDF5B6429A26F9500FA4CEB /* SetModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -171,6 +187,7 @@
 			children = (
 				4EE89825299E173D009E8CC7 /* ViewController.swift */,
 				4E30E156299E47DC00433247 /* BaseViewController.swift */,
+				4E4650F329A0A2AD00191315 /* DetailCardViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -180,6 +197,7 @@
 			children = (
 				4E9042C3299E3FFC004FA472 /* ViewModel.swift */,
 				4E30E162299E6F9400433247 /* BaseViewModel.swift */,
+				4E4650F529A0A2DF00191315 /* DetailCardViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -505,21 +523,27 @@
 			buildActionMask = 2147483647;
 			files = (
 				4E30E157299E47DC00433247 /* BaseViewController.swift in Sources */,
-				4E64F41B299E334A00ACE764 /* CardBaseModel.swift in Sources */,
+				4E64F41B299E334A00ACE764 /* CardsBaseModel.swift in Sources */,
+				4E46521029A0ADF200191315 /* Font.swift in Sources */,
 				4E30E163299E6F9400433247 /* BaseViewModel.swift in Sources */,
 				4E30E161299E527900433247 /* ImageModel.swift in Sources */,
 				4E64F416299E313500ACE764 /* NetworkLogger.swift in Sources */,
 				4EE89826299E173D009E8CC7 /* ViewController.swift in Sources */,
 				4E30E15A299E4AE500433247 /* CardCollectionViewCell.swift in Sources */,
 				4E9042C4299E3FFC004FA472 /* ViewModel.swift in Sources */,
+				4E4650F829A0A40200191315 /* CardBaseModel.swift in Sources */,
 				4E30E15F299E4DDC00433247 /* ImageLoader.swift in Sources */,
 				4E64F410299E20A900ACE764 /* BaseAPI.swift in Sources */,
+				4E46520E29A0AC8600191315 /* UILabel+Ext.swift in Sources */,
 				4E64F418299E31A900ACE764 /* Interceptor.swift in Sources */,
+				4E4650F429A0A2AD00191315 /* DetailCardViewController.swift in Sources */,
+				4E4650F629A0A2DF00191315 /* DetailCardViewModel.swift in Sources */,
 				4EE89822299E173D009E8CC7 /* AppDelegate.swift in Sources */,
 				4EE89824299E173D009E8CC7 /* SceneDelegate.swift in Sources */,
 				4E64F412299E233E00ACE764 /* ListUrls.swift in Sources */,
 				4E64F414299E245800ACE764 /* NetworkResponse.swift in Sources */,
 				4E64F41D299E36A000ACE764 /* CardModel.swift in Sources */,
+				4EDF5B6529A26F9500FA4CEB /* SetModel.swift in Sources */,
 				4E30E043299E43E900433247 /* BehaviorDriver.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -706,6 +730,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -735,6 +760,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
