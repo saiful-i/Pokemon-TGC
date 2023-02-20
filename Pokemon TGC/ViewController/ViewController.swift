@@ -102,10 +102,9 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
         openDetailCard(id: id, otherCardId: otherCardId)
     }
     
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        let contentOffsetX = scrollView.contentOffset.x
-        if contentOffsetX >= (scrollView.contentSize.width - scrollView.bounds.width) - 20 /* Needed offset */ {
-            guard !viewModel.isLoading.value() else { return }
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        let bottomEdge = scrollView.contentOffset.y + scrollView.frame.size.height
+        if bottomEdge >= scrollView.contentSize.height && !viewModel.isLoading.value() {
             viewModel.loadMore()
         }
     }
