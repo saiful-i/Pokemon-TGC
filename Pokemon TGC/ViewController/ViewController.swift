@@ -41,6 +41,9 @@ extension ViewController {
         textField.layer.borderWidth = 1
         textField.layer.cornerRadius = 8
         textField.placeholder = "Search Pokemon"
+        textField.returnKeyType = .done
+        textField.textContentType = .name
+        textField.addTarget(self, action: #selector(textFieldDidEndEditing), for: .editingChanged)
         textField.delegate = self
         
         view.addSubview(textField)
@@ -78,6 +81,14 @@ extension ViewController {
         controller.id = id
         controller.otherCardId = otherCardId
         navigationController?.pushViewController(controller, animated: true)
+    }
+    
+    @objc func textFieldDidEndEditing(_ textField: UITextField) {
+        guard let viewModel = viewModel,
+              let name = textField.text else {
+                  return
+              }
+        viewModel.getCards(name: name)
     }
 }
 
@@ -118,9 +129,8 @@ extension ViewController: UICollectionViewDelegateFlowLayout {
 }
 
 extension ViewController: UITextFieldDelegate {
-    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        let text = (textField.text ?? "") + string
-        viewModel?.getCards(name: text)
-        return true
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return false
     }
 }
