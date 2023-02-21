@@ -19,7 +19,6 @@ class DetailCardViewController: BaseViewController<DetailCardViewModel> {
     lazy var collectionViewLayput = UICollectionViewFlowLayout()
     lazy var collectionView = UICollectionView(frame: view.frame, collectionViewLayout: collectionViewLayput)
     
-//    let viewModel = DetailCardViewModel()
     let imageLoader = ImageLoader.shared
     var id = ""
     var otherCardId = ""
@@ -82,6 +81,9 @@ extension DetailCardViewController {
     
     private func setupImageView() {
         scrollView.addSubview(imageView)
+        imageView.isUserInteractionEnabled = true
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(onImageTapped))
+        imageView.addGestureRecognizer(tapGestureRecognizer)
         imageView.contentMode = .scaleAspectFit
         imageView.translatesAutoresizingMaskIntoConstraints = false
         let constraints = [
@@ -192,6 +194,8 @@ extension DetailCardViewController {
         flavorTitleLabel.applyStyle(stringText: "Flavor:", fontName: .medium, size: 16, lines: 1)
         flavorDescriptionLabel.applyStyle(stringText: card.flavorText ?? "-", fontName: .regular, size: 12, lines: 0)
         otherCardLabel.applyStyle(stringText: "Other Cards", fontName: .medium, size: 16, lines: 1)
+        
+    
     }
     
     private func openDetailCard(id: String, otherCardId: String) {
@@ -199,6 +203,12 @@ extension DetailCardViewController {
         controller.id = id
         controller.otherCardId = otherCardId
         navigationController?.pushViewController(controller, animated: true)
+    }
+    
+    @objc func onImageTapped() {
+        let controller = DetailPhotoViewController()
+        controller.url = viewModel?.card.value()?.images?.large ?? ""
+        present(controller, animated: true)
     }
 }
 

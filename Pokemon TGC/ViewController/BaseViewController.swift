@@ -41,7 +41,7 @@ extension BaseViewController {
         }
     }
     
-    func setupLoadingView() {
+    private func setupLoadingView() {
         guard let view = view else {
             return
         }
@@ -57,7 +57,7 @@ extension BaseViewController {
         loadingView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
     }
     
-    func isShowLoading(_ isLoading: Bool) {
+    private func isShowLoading(_ isLoading: Bool) {
         isLoading ? loadingView.startAnimating() : loadingView.stopAnimating()
     }
     

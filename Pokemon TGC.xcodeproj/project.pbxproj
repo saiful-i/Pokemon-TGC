@@ -27,6 +27,8 @@
 		4E64F418299E31A900ACE764 /* Interceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E64F417299E31A900ACE764 /* Interceptor.swift */; };
 		4E64F41B299E334A00ACE764 /* CardsBaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E64F41A299E334A00ACE764 /* CardsBaseModel.swift */; };
 		4E64F41D299E36A000ACE764 /* CardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E64F41C299E36A000ACE764 /* CardModel.swift */; };
+		4E66A98329A360EF00A4EDDD /* DetailPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E66A98229A360EF00A4EDDD /* DetailPhotoViewController.swift */; };
+		4E66A98729A36CDE00A4EDDD /* CGRect+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E66A98629A36CDE00A4EDDD /* CGRect+Ext.swift */; };
 		4E9042C4299E3FFC004FA472 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E9042C3299E3FFC004FA472 /* ViewModel.swift */; };
 		4EDF5B6529A26F9500FA4CEB /* SetModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDF5B6429A26F9500FA4CEB /* SetModel.swift */; };
 		4EE89822299E173D009E8CC7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EE89821299E173D009E8CC7 /* AppDelegate.swift */; };
@@ -78,6 +80,8 @@
 		4E64F417299E31A900ACE764 /* Interceptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Interceptor.swift; sourceTree = "<group>"; };
 		4E64F41A299E334A00ACE764 /* CardsBaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsBaseModel.swift; sourceTree = "<group>"; };
 		4E64F41C299E36A000ACE764 /* CardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardModel.swift; sourceTree = "<group>"; };
+		4E66A98229A360EF00A4EDDD /* DetailPhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPhotoViewController.swift; sourceTree = "<group>"; };
+		4E66A98629A36CDE00A4EDDD /* CGRect+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGRect+Ext.swift"; sourceTree = "<group>"; };
 		4E9042C3299E3FFC004FA472 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		4EDF5B6429A26F9500FA4CEB /* SetModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetModel.swift; sourceTree = "<group>"; };
 		4EE8981E299E173D009E8CC7 /* Pokemon TGC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pokemon TGC.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -153,6 +157,7 @@
 			isa = PBXGroup;
 			children = (
 				4E46520D29A0AC8600191315 /* UILabel+Ext.swift */,
+				4E66A98629A36CDE00A4EDDD /* CGRect+Ext.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -188,6 +193,7 @@
 				4EE89825299E173D009E8CC7 /* ViewController.swift */,
 				4E30E156299E47DC00433247 /* BaseViewController.swift */,
 				4E4650F329A0A2AD00191315 /* DetailCardViewController.swift */,
+				4E66A98229A360EF00A4EDDD /* DetailPhotoViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -528,8 +534,10 @@
 				4E30E163299E6F9400433247 /* BaseViewModel.swift in Sources */,
 				4E30E161299E527900433247 /* ImageModel.swift in Sources */,
 				4E64F416299E313500ACE764 /* NetworkLogger.swift in Sources */,
+				4E66A98329A360EF00A4EDDD /* DetailPhotoViewController.swift in Sources */,
 				4EE89826299E173D009E8CC7 /* ViewController.swift in Sources */,
 				4E30E15A299E4AE500433247 /* CardCollectionViewCell.swift in Sources */,
+				4E66A98729A36CDE00A4EDDD /* CGRect+Ext.swift in Sources */,
 				4E9042C4299E3FFC004FA472 /* ViewModel.swift in Sources */,
 				4E4650F829A0A40200191315 /* CardBaseModel.swift in Sources */,
 				4E30E15F299E4DDC00433247 /* ImageLoader.swift in Sources */,
