@@ -9,7 +9,7 @@ import Foundation
 import RxSwift
 
 class ViewModel: BaseViewModel {
-    var cards = BehaviorDriver<[CardModel]>(value: [])
+    var cards = BehaviorDriver<[CardModel]?>(value: nil)
     var name = ""
     var page = 1
     
@@ -37,7 +37,7 @@ class ViewModel: BaseViewModel {
                 return
             }
             self.isLoading.accept(false)
-            tempCards.append(contentsOf: cards)
+            tempCards?.append(contentsOf: cards)
             self.cards.accept(tempCards)
             self.page = cards.count
             self.isLoading.accept(false)

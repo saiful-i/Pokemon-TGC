@@ -183,19 +183,17 @@ extension DetailCardViewController {
     }
     
     private func bindData(card: CardModel) {
-        imageLoader.attachImage(url: card.images?.small ?? "", into: imageView)
-        nameLabel.applyStyle(stringText: card.name ?? "", fontName: .medium, size: 16, lines: 1)
-        let typesString: String = card.types?.joined(separator: ", ") ?? ""
+        imageLoader.attachImage(url: (card.images?.small).ifNil(""), into: imageView)
+        nameLabel.applyStyle(stringText: (card.name).ifNil(""), fontName: .medium, size: 16, lines: 1)
+        let typesString: String = (card.types?.joined(separator: ", ")).ifNil("")
         
-        hpAndTypesLabel.applyStyle(stringText: "\(typesString) (\(card.hp ?? ""))", fontName: .regular, size: 12, lines: 0)
+        hpAndTypesLabel.applyStyle(stringText: "\(typesString) (\((card.hp).ifNil("")))", fontName: .regular, size: 12, lines: 0)
         
-        let subtypeString: String = card.subtypes?.joined(separator: ", ") ?? ""
+        let subtypeString: String = (card.subtypes?.joined(separator: ", ")).ifNil("")
         superTypeAndSubTypeLabel.applyStyle(stringText: "\(subtypeString) - \(subtypeString)", fontName: .regular, size: 12, lines: 0)
         flavorTitleLabel.applyStyle(stringText: "Flavor:", fontName: .medium, size: 16, lines: 1)
-        flavorDescriptionLabel.applyStyle(stringText: card.flavorText ?? "-", fontName: .regular, size: 12, lines: 0)
+        flavorDescriptionLabel.applyStyle(stringText: (card.flavorText).ifNil("-"), fontName: .regular, size: 12, lines: 0)
         otherCardLabel.applyStyle(stringText: "Other Cards", fontName: .medium, size: 16, lines: 1)
-        
-    
     }
     
     private func openDetailCard(id: String, otherCardId: String) {
@@ -207,14 +205,14 @@ extension DetailCardViewController {
     
     @objc func onImageTapped() {
         let controller = DetailPhotoViewController()
-        controller.url = viewModel?.card.value()?.images?.large ?? ""
+        controller.url = (viewModel?.card.value()?.images?.large).ifNil("")
         present(controller, animated: true)
     }
 }
 
 extension DetailCardViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return viewModel?.otherCards.value().count ?? 0
+        return (viewModel?.otherCards.value().count).ifNil(0)
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

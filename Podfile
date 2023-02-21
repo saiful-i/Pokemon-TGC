@@ -12,8 +12,8 @@ target 'Pokemon TGC' do
   pod 'AlamofireImage', '~> 4.2'
 
   target 'Pokemon TGCTests' do
-    inherit! :search_paths
-    # Pods for testing
+    pod 'Quick', '5.0.1'
+    pod 'Nimble', '10.0.0'
   end
 
   target 'Pokemon TGCUITests' do

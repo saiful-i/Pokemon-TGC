@@ -58,6 +58,7 @@ extension ViewController {
     }
     
     private func setupCollectionView() {
+        collectionView.registerCell(withClass: CardCollectionViewCell.self)
         collectionView.register(CardCollectionViewCell.self, forCellWithReuseIdentifier: "CardCollectionViewCell")
         collectionViewLayput.sectionInset = UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8)
         collectionViewLayput.minimumInteritemSpacing = 8
@@ -94,18 +95,18 @@ extension ViewController {
 
 extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return viewModel?.cards.value().count ?? 0
+        return (viewModel?.cards.value()?.count).ifNil(0)
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CardCollectionViewCell", for: indexPath) as! CardCollectionViewCell
-        cell.imageUrl = viewModel?.cards.value()[indexPath.row].images?.small
+        let cell = collectionView.dequeueCell(withType: CardCollectionViewCell.self, for: indexPath)
+        cell.imageUrl = viewModel?.cards.value()?[indexPath.row].images?.small
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        guard let id = viewModel?.cards.value()[indexPath.row].id,
-              let otherCardId = viewModel?.cards.value()[indexPath.row].setModel?.id else {
+        guard let id = viewModel?.cards.value()?[indexPath.row].id,
+              let otherCardId = viewModel?.cards.value()?[indexPath.row].setModel?.id else {
             return
         }
         
@@ -114,7 +115,7 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         let bottomEdge = scrollView.contentOffset.y + scrollView.frame.size.height
-        if bottomEdge >= scrollView.contentSize.height && !(viewModel?.isLoading.value() ?? true) {
+        if bottomEdge >= scrollView.contentSize.height && !(viewModel?.isLoading.value()).ifNil(true) {
             viewModel?.loadMore()
         }
     }
