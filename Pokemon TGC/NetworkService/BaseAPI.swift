@@ -6,7 +6,6 @@
 //
 
 import Alamofire
-import SwiftyJSON
 
 class BaseApi {
     static let shared = BaseApi()
