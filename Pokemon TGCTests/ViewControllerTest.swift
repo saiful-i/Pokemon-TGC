@@ -8,6 +8,7 @@
 import Quick
 import Nimble
 @testable import Pokemon_TGC
+@testable import NetworkModule
 
 final class ViewControllerTest: QuickSpec {
     override func spec() {
