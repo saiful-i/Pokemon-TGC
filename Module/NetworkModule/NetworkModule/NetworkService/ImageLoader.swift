@@ -8,7 +8,7 @@
 import UIKit
 import AlamofireImage
 
-class ImageLoader: ImageProtocol {
+public class ImageLoader: ImageProtocol {
     public static var shared: ImageLoader = ImageLoader()
     public static let defaultPlaceholder = "ic_placeholder"
     
@@ -21,7 +21,6 @@ class ImageLoader: ImageProtocol {
             return
         }
         
-        let urlRequest = URLRequest(url: url, cachePolicy: .returnCacheDataElseLoad)
         imageView.af.setImage(withURL: url, placeholderImage: placeholderImage)
     }
 }

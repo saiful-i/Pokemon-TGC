@@ -7,16 +7,16 @@
 
 import Foundation
 
-struct CardModel {
-    let name: String?
-    let id: String?
-    let images: ImageModel?
-    let types: [String]?
-    let hp: String?
-    let supertype: String?
-    let subtypes: [String]?
-    let flavorText: String?
-    let setModel: SetModel?
+public struct CardModel {
+    public let name: String?
+    public let id: String?
+    public let images: ImageModel?
+    public let types: [String]?
+    public let hp: String?
+    public let supertype: String?
+    public let subtypes: [String]?
+    public let flavorText: String?
+    public let setModel: SetModel?
     
     enum CodingKeys: String, CodingKey {
         case name, id, images, types, hp, supertype, subtypes, flavorText, set
@@ -24,7 +24,7 @@ struct CardModel {
 }
 
 extension CardModel: Decodable {
-    init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         name = try container.decodeIfPresent(String.self, forKey: .name)
         id = try container.decodeIfPresent(String.self, forKey: .id)

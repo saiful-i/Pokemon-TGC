@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import NetworkModule
 
 class DetailCardViewController: BaseViewController<DetailCardViewModel> {
     lazy var scrollView = UIScrollView()
@@ -164,6 +165,7 @@ extension DetailCardViewController {
     private func setupCollectionView() {
         scrollView.addSubview(collectionView)
         collectionView.register(CardCollectionViewCell.self, forCellWithReuseIdentifier: "CardCollectionViewCell")
+        collectionView.backgroundColor = .white
         collectionViewLayput.sectionInset = UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8)
         collectionViewLayput.minimumInteritemSpacing = 8
         collectionViewLayput.minimumLineSpacing = 8

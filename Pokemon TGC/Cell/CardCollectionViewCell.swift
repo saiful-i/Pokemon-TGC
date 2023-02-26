@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import NetworkModule
 
 class CardCollectionViewCell: UICollectionViewCell {
     lazy var imageView = UIImageView()

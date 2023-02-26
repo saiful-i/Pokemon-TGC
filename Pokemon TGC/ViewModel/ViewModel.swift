@@ -7,6 +7,7 @@
 
 import Foundation
 import RxSwift
+import NetworkModule
 
 class ViewModel: BaseViewModel {
     var cards = BehaviorDriver<[CardModel]?>(value: nil)

@@ -19,3 +19,4 @@ Pods/*
 \.DS_Store
 Pokemon TGC.xcworkspace/contents.xcworkspacedata
 Podfile.lock
+Module/NetworkModule/NetworkModule.xcodeproj/xcuserdata/saifulislam.xcuserdatad/xcschemes/xcschememanagement.plist

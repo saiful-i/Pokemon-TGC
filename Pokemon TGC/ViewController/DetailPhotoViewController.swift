@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import NetworkModule
 
 class DetailPhotoViewController: BaseViewController<BaseViewModel> {
     lazy var scrollView = UIScrollView()
