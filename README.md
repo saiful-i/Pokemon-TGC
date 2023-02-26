@@ -1,14 +1,13 @@
-
 # Pokemon TGC
 
-iOS App fetching card data from API [Pokémon TCG](https://pokemontcg.io/) API. This codebase also covered by unit test.
+iOS App fetching card data from API [Pokémon TCG](https://pokemontcg.io/) API. This codebase also covered by unit test and implemented modular app for networking.
 
 ### Cocoapod
 - [Alamofire](https://github.com/Alamofire/Alamofire)
 - [AlamofireImage](https://github.com/Alamofire/AlamofireImage)
 - [RxSwift](https://github.com/reactivex/rxswift)
 - [RxCocoa](https://github.com/ReactiveX/RxSwift)
-
+### How 
 ### Screen Shoot
 
 | Home | Detail Card | Detail Photo Card |
